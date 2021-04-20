@@ -36,6 +36,8 @@ const Users=[
 
 function Userlist(){
     return(
+       <div>
+        {
         Users.map((user,index)=>{
          //names.map((name,index)=>{
             // return <h1> {name}</h1>
@@ -43,7 +45,9 @@ function Userlist(){
             // return <User key={index} name={user.name}  id={user.id} dept={user.dept} email={user.email}/>
 
             return <User key={index}  {...user}/>
-        })    
+        }) 
+        }
+        </div>
     );
 }
 
