@@ -30,16 +30,19 @@ const Users=[
 	}
 ];
 
-const names =[ 'a' , 'b', 'c' , 'd']
+// const names =[ 'a' , 'b', 'c' , 'd']
 
 
 
 function Userlist(){
     return(
-        Users.map((user)=>{
+        Users.map((user,index)=>{
+         //names.map((name,index)=>{
             // return <h1> {name}</h1>
+            // console.log(index);
+            // return <User key={index} name={user.name}  id={user.id} dept={user.dept} email={user.email}/>
 
-            return <User name={user.name}  id={user.id} dept={user.dept} email={user.email}/>
+            return <User key={index}  {...user}/>
         })    
     );
 }
@@ -63,9 +66,11 @@ function Userlist(){
 
 
 //function User(props){
-function User({name, id, dept, email}){
+function User({name, id, dept,email}){
 
    // const {name, id, dept} =props;
+
+   //const {name, id, dept,email} =props.user;
 
     // const name= "shafayet";
     // const id= "12";
