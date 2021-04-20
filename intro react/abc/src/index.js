@@ -46,10 +46,17 @@ function Userlist(){
 
             return <User key={index}  {...user}/>
         }) 
-        }
+    }
         </div>
     );
 }
+
+// const myname = ()=>{
+//      alert('test')
+// }
+
+
+ 
 
 
 // function User(){
@@ -90,6 +97,8 @@ function User({name, id, dept,email}){
          <p>  ID:  {id}</p>
          <p>  Dept:  {dept} </p>
          <p>  email:  {email} </p>
+         {/* <button onClick={myname}>Click</button> */}
+         <button onClick={()=>alert(name)}>Click</button>
         </div>  
     )
 };
