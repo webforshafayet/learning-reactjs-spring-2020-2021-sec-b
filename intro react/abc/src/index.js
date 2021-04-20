@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
 
-const name= "shafayet";
-const id= "12";
-const dept= "CS";
+// const name= "shafayet";
+// const id= "12";
+// const dept= "CS";
+ 
 
 
 const Users=[
 
 {
 		id: '1',
-		name: 'Alamin',
+		name: 'shafayet',
 		dept: 'CS',
 		email: 'alamin@aiub.edu'
 	},
@@ -35,8 +36,10 @@ const names =[ 'a' , 'b', 'c' , 'd']
 
 function Userlist(){
     return(
-        names.map((name)=>{
-            return <h1> {name}</h1>
+        Users.map((user)=>{
+            // return <h1> {name}</h1>
+
+            return <User name={user.name}  id={user.id} dept={user.dept} email={user.email}/>
         })    
     );
 }
@@ -60,7 +63,7 @@ function Userlist(){
 
 
 //function User(props){
-function User({name, id, dept}){
+function User({name, id, dept, email}){
 
    // const {name, id, dept} =props;
 
@@ -77,6 +80,7 @@ function User({name, id, dept}){
          <h1> Name: {name}</h1>
          <p>  ID:  {id}</p>
          <p>  Dept:  {dept} </p>
+         <p>  email:  {email} </p>
         </div>  
     )
 };
