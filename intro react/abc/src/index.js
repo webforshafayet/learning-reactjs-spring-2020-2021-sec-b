@@ -1,34 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'
+import './index.css';
+import {users} from './users';
+import User from './component/User';
+ 
 
 // const name= "shafayet";
 // const id= "12";
 // const dept= "CS";
  
 
-
-const Users=[
-
-{
-		id: '1',
-		name: 'shafayet',
-		dept: 'CS',
-		email: 'alamin@aiub.edu'
-	},
-	{
-		id: '2',
-		name: 'ABC',
-		dept: 'CIS',
-		email: 'abc@aiub.edu'
-	},
-	{
-		id: '3',
-		name: 'XYZ',
-		dept: 'CSE',
-		email: 'xyz@aiub.edu'
-	}
-];
 
 // const names =[ 'a' , 'b', 'c' , 'd']
 
@@ -38,7 +19,7 @@ function Userlist(){
     return(
        <div>
         {
-        Users.map((user,index)=>{
+        users.map((user,index)=>{
          //names.map((name,index)=>{
             // return <h1> {name}</h1>
             // console.log(index);
@@ -77,31 +58,7 @@ function Userlist(){
 
 
 //function User(props){
-function User({name, id, dept,email}){
-
-   // const {name, id, dept} =props;
-
-   //const {name, id, dept,email} =props.user;
-
-    // const name= "shafayet";
-    // const id= "12";
-    // const dept= "CS";
-
-    return(
-        <div className='usermain'>
-        {/* <h1> Name: {props.name}</h1>
-        <p>  ID:  {props.id}</p>
-        <p>  Dept:  {props.dept} </p> */}
-
-         <h1> Name: {name}</h1>
-         <p>  ID:  {id}</p>
-         <p>  Dept:  {dept} </p>
-         <p>  email:  {email} </p>
-         {/* <button onClick={myname}>Click</button> */}
-         <button onClick={()=>alert(name)}>Click</button>
-        </div>  
-    )
-};
+ 
 
 // ReactDOM.render( <User/>,document.getElementById('root')) /// render  only user
 
