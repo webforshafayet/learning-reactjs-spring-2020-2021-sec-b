@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {users} from './users';
-import User from './component/User';
+import {users} from './userData';
+import User from './components/User';
+import AddUserFrom from './components/AddUserForm';
  
 
 // const name= "shafayet";
@@ -17,18 +18,24 @@ import User from './component/User';
 
 function Userlist(){
     return(
-       <div>
-        {
-        users.map((user,index)=>{
-         //names.map((name,index)=>{
-            // return <h1> {name}</h1>
-            // console.log(index);
-            // return <User key={index} name={user.name}  id={user.id} dept={user.dept} email={user.email}/>
 
-            return <User key={index}  {...user}/>
-        }) 
-    }
-        </div>
+
+        <table>
+			<thead></thead>
+			<tbody>
+				<tr>
+					<td> <AddUserFrom/>  </td>
+					<td>
+						{
+							 users.map((user, index)=>{
+								return <User key={index} {...user}/>;
+							})
+						}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+        
     );
 }
 

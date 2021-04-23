@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function User({name, id, dept,email}){
 
     // const {name, id, dept} =props;
@@ -14,10 +16,12 @@ export default function User({name, id, dept,email}){
          <p>  ID:  {props.id}</p>
          <p>  Dept:  {props.dept} </p> */}
  
-          <h1> Name: {name}</h1>
-          <p>  ID:  {id}</p>
-          <p>  Dept:  {dept} </p>
-          <p>  email:  {email} </p>
+        <h3>Name: {name}</h3>
+			<p>
+				ID: {id} <br/>
+				DEPT: {dept} <br/>
+				Email: {email} <br/>
+			</p>	
           {/* <button onClick={myname}>Click</button> */}
           <button onClick={()=>alert(name)}>Click</button>
          </div>  
