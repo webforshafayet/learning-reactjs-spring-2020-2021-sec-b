@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function User({name, id, dept,email}){
+export default function User({name, id, dept,email,deleteUser}){
 
     // const {name, id, dept} =props;
  
@@ -23,7 +23,7 @@ export default function User({name, id, dept,email}){
 				Email: {email} <br/>
 			</p>	
           {/* <button onClick={myname}>Click</button> */}
-          <button onClick={()=>alert(name)}>Click</button>
+          <button onClick={()=>deleteUser(id)}>Delete</button>
          </div>  
      )
  };

@@ -30,6 +30,12 @@ const addUser= (newUser)=>{
      
 }
 
+
+//delete user
+const deleteUser= (id)=>{
+    setUsers(list.filter((user)=>user.id !=id));
+}
+
     return(
 
 
@@ -41,7 +47,7 @@ const addUser= (newUser)=>{
 					<td>
 						{
 							  list.map((user, index)=>{
-								return <User key={index} {...user}/>;
+								return <User key={index} {...user} deleteUser={deleteUser}/>;
 							})
 						}
 					</td>
