@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -15,8 +16,20 @@ import AddUserFrom from './components/AddUserForm';
 // const names =[ 'a' , 'b', 'c' , 'd']
 
 
+ 
+
 
 function Userlist(){
+ 
+const [ list, setUsers] = useState(users);
+
+
+//add user 
+const addUser= (newUser)=>{
+    setUsers([...list, newUser]);
+     
+}
+
     return(
 
 
@@ -24,10 +37,10 @@ function Userlist(){
 			<thead></thead>
 			<tbody>
 				<tr>
-					<td> <AddUserFrom/>  </td>
+					<td> <AddUserFrom addUser={addUser}/>  </td>
 					<td>
 						{
-							 users.map((user, index)=>{
+							  list.map((user, index)=>{
 								return <User key={index} {...user}/>;
 							})
 						}
@@ -35,6 +48,7 @@ function Userlist(){
 				</tr>
 			</tbody>
 		</table>
+        
         
     );
 }
