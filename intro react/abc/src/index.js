@@ -5,6 +5,7 @@ import './index.css';
 import {users} from './userData';
 import User from './components/User';
 import AddUserFrom from './components/AddUserForm';
+import Navbar from './components/Navbar';
  
 
 // const name= "shafayet";
@@ -43,7 +44,10 @@ const deleteUser= (id)=>{
 			<thead></thead>
 			<tbody>
 				<tr>
-					<td> <AddUserFrom addUser={addUser}/>  </td>
+					<td>
+						<Navbar/>
+						 <AddUserFrom addUser={addUser}/> 
+					 </td>
 					<td>
 						{
 							  list.map((user, index)=>{
