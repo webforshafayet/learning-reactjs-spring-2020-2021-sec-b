@@ -6,6 +6,7 @@ import {users} from './userData';
 import User from './components/User';
 import AddUserFrom from './components/AddUserForm';
 import Navbar from './components/Navbar';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
  
 
 // const name= "shafayet";
@@ -40,24 +41,45 @@ const deleteUser= (id)=>{
     return(
 
 
-        <table>
-			<thead></thead>
-			<tbody>
-				<tr>
-					<td>
-						<Navbar/>
-						 <AddUserFrom addUser={addUser}/> 
-					 </td>
-					<td>
+        <Router>
+			<Navbar/>
+
+			<Switch>
+			<Route exact path='/'>
+				<h1> Home </h1>
+				 
+			 
+			</Route>
+
+
+
+			<Route path='/add'>
+					<AddUserFrom addUser={addUser}/> 
+			</Route>
+
+			<Route path='/userlist'>
+				<>
 						{
 							  list.map((user, index)=>{
 								return <User key={index} {...user} deleteUser={deleteUser}/>;
 							})
 						}
-					</td>
-				</tr>
-			</tbody>
-		</table>
+				</>		
+			</Route>
+			 
+
+			<Route path='*'>
+					 <h1>404 not found</h1>
+			</Route>
+
+
+			 
+
+			</Switch>
+		</Router>
+
+
+
         
         
     );
